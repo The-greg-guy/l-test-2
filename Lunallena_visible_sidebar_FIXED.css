@@ -506,15 +506,15 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 [data-test="footer-player"] {
     position: fixed !important;
     left: 1vw !important; 
-    right: 1vw !important; 
+    right: 1vw !important;
     width: auto !important; 
+    transform: none !important; 
     margin: 0 auto;
     height: 100px;
     bottom: 2vh;
     border-radius: 20px;
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
-    overflow: hidden;
     z-index: 1000 !important; 
 }
 
