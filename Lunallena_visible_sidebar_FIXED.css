@@ -537,17 +537,20 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 
 [aria-label="Progress bar"] {
-    position: absolute !important; 
-    top: 0 !important; 
-    left: 0 !important; 
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
-    height: 15px !important; 
-    z-index: 1000 !important; 
+    height: 100% !important; /* Fills the whole footer */
+    z-index: 0 !important; /* Puts it behind the buttons/text */
+    border-radius: 20px !important; /* Matches the footer's curved edges */
+    overflow: hidden !important;
 }
 
 [class*="_range_"] {
-    background: transparent;
-    border-radius: 20px;
+    height: 100% !important;
+    border-radius: 20px !important;
+    background: transparent !important;
 }
 
 [data-test="progress-indicator"] {
