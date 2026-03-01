@@ -501,21 +501,17 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
    FOOTER PLAYER - FIXED
    ========================================================= */
 
-
-
 [data-test="footer-player"] {
-    position: fixed !important;
-    left: 1vw !important; 
-    right: 1vw !important;
-    width: auto !important; 
-    transform: none !important; 
-    margin: 0 auto;
+    position: fixed;
+    left: calc(var(--sidebarWidth) + 50px + 1vw);
+    width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
     height: 100px;
-    bottom: 2vh;
+    bottom: 20px;
     border-radius: 20px;
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
-    z-index: 1000 !important; 
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 [data-test="footer-player"]::before {
@@ -539,14 +535,14 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     position: relative;
 }
 
-
+/* Progress bar - fixed positioning, adjusted for sidebar */
 [aria-label="Progress bar"] {
     position: fixed;
     top: -75px;
-    width: 98vw;
+    left: calc(var(--sidebarWidth) + 50px + 1vw);
+    width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
     height: 100px;
 }
-
 
 [class*="_range_"] {
     background: transparent;
@@ -559,8 +555,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 [data-test="interaction-layer"] {
     height: 25px;
-    transform: none;
-    position: relative;
+    transform: translateY(-115px);
     pointer-events: auto;
 }
 
