@@ -544,6 +544,12 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     height: 100px;
 }
 
+/* Progress bar container - ensure children fill from left */
+[aria-label="Progress bar"] > * {
+    left: 0 !important;
+    transform: none !important;
+}
+
 [class*="_range_"] {
     background: transparent;
     border-radius: 20px;
@@ -554,14 +560,27 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 [class*="_range_"] > * {
     left: 0 !important;
+    transform: none !important;
 }
 
+/* Progress indicator fill - force to start from left edge */
 [data-test="progress-indicator"] {
     background-color: rgba(255, 255, 255, 0.07);
     left: 0 !important;
     margin-left: 0 !important;
     padding-left: 0 !important;
+    transform: none !important;
     transform-origin: left center !important;
+}
+
+/* Ensure the progress fill container aligns to left */
+[aria-label="Progress bar"] [class*="progress"],
+[aria-label="Progress bar"] [class*="Progress"],
+[aria-label="Progress bar"] > div {
+    left: 0 !important;
+    transform: none !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
 }
 
 [data-test="interaction-layer"] {
