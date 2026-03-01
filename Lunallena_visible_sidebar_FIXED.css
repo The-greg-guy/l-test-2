@@ -501,17 +501,21 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
    FOOTER PLAYER - FIXED
    ========================================================= */
 
+
+
 [data-test="footer-player"] {
-    position: fixed;
-    left: calc(var(--sidebarWidth) + 50px + 1vw);
-    width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
+    position: fixed !important;
+    left: 1vw !important; 
+    right: 1vw !important; 
+    width: auto !important; 
+    margin: 0 auto;
     height: 100px;
-    bottom: 20px;
+    bottom: 2vh;
     border-radius: 20px;
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
-    box-sizing: border-box;
     overflow: hidden;
+    z-index: 1000 !important; 
 }
 
 [data-test="footer-player"]::before {
