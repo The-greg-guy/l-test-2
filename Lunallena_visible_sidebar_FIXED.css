@@ -1,6 +1,6 @@
 /* =========================================================
    Lunallena 🌕 v4.15
-   VISIBLE SIDEBAR VERSION
+   VISIBLE SIDEBAR VERSION - FIXED
    by Acercandr0
    ========================================================= */
 
@@ -26,6 +26,11 @@
 
     /* Border */
     --border: 1px solid rgba(255, 255, 255, 0.06);
+    
+    /* Layout Variables */
+    --sidebarWidth: 240px;
+    --os-title-bar-height: 32px;
+    --miniPlayerHeight: 120px;
     
     /* Effects */
     --blur-glass: blur(35px) saturate(2.5);
@@ -131,12 +136,15 @@ h1 {
     margin-top: 0;
     min-width: 100vw;
     --playQueueWidth: 0px;
+    box-sizing: border-box;
 }
 
 .mainContent {
     min-height: 100svh !important;
-    width: 98vw;
-    padding-bottom: var(--miniPlayerHeight);
+    width: calc(100vw - var(--sidebarWidth) - 50px);
+    padding-bottom: calc(var(--miniPlayerHeight) + 20px);
+    box-sizing: border-box;
+    margin-left: calc(var(--sidebarWidth) + 50px);
 }
 
 [data-test="home-page-feed"] {
@@ -144,7 +152,7 @@ h1 {
 }
 
 [class*="feed"] {
-    width: 100vw;
+    width: 100%;
 }
 
 [class*="MuiContainer"] {
@@ -490,19 +498,20 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 /* =========================================================
-   FOOTER PLAYER
+   FOOTER PLAYER - FIXED
    ========================================================= */
 
 [data-test="footer-player"] {
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 98vw;
+    left: calc(var(--sidebarWidth) + 50px + 1vw);
+    width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
     height: 100px;
-    bottom: 2vh;
+    bottom: 20px;
     border-radius: 20px;
     background-color: var(--bg-glass-light) !important;
     backdrop-filter: var(--blur);
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 [data-test="footer-player"]::before {
@@ -516,13 +525,16 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     border-bottom: none;
     border-radius: inherit;
     pointer-events: none;
+    z-index: 0;
 }
 
 [data-test="left-column-footer-player"],
 [data-test="play-controls"],
 [data-test="footer-player"] > div:last-child {
     z-index: 1;
+    position: relative;
 }
+
 
 [aria-label="Progress bar"] {
     position: fixed;
@@ -530,6 +542,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     width: 98vw;
     height: 100px;
 }
+
 
 [class*="_range_"] {
     background: transparent;
@@ -542,7 +555,8 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 [data-test="interaction-layer"] {
     height: 25px;
-    transform: translateY(-115px);
+    transform: none;
+    position: relative;
     pointer-events: auto;
 }
 
