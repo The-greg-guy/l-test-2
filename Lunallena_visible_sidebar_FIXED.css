@@ -554,7 +554,11 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 [data-test="progress-indicator"] {
-    background-color: rgba(255, 255, 255, 0.07);
+    height: 100% !important;
+    top: 0 !important;
+    transform: none !important;
+    background-color: rgba(255, 255, 255, 0.07) !important; 
+    border-radius: 20px 0 0 20px !important;
 }
 
 [data-test="interaction-layer"] {
@@ -564,8 +568,8 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     width: 100% !important;
     height: 100% !important;
     transform: none !important;
-    pointer-events: auto !important;
-    z-index: 1010 !important;
+    z-index: 5 !important;
+    pointer-events: auto !important; 
 }
 
 #progressBar > div > [class*="toolTip"] {
@@ -592,6 +596,12 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 [data-test="left-column-footer-player"],
+[data-test="play-controls"],
+[data-test="footer-player"] > div:last-child {
+    z-index: 10 !important; /* Brings controls above the giant progress bar */
+    position: relative !important;
+    pointer-events: auto !important;
+}
 [class*="_leftColumn_"] {
     overflow: visible !important;
 }
@@ -636,11 +646,13 @@ button[aria-label="Play queue"] {
     width: 10px;
     height: 10px;
     margin-left: -6px;
-    margin-top: -2px;
+    top: 50% !important;
+    transform: translateY(-50%) !important; 
+    margin-top: 0 !important;
     border-radius: 50%;
     box-shadow: none;
-    background-color: var(--wave-color-solid-accent-fill);
-
+    background-color: var(--wave-color-solid-accent-fill) !important;
+    z-index: 6 !important; 
 }
 
 [class*="nativeRangeContainer"] {
