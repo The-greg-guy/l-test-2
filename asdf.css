@@ -502,16 +502,16 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
    ========================================================= */
 
 [data-test="footer-player"] {
-    position: fixed;
-    left: calc(var(--sidebarWidth) + 50px + 1vw);
-    width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
-    height: 100px;
-    bottom: 20px;
-    border-radius: 20px;
-    background-color: var(--bg-glass-light) !important;
-    backdrop-filter: var(--blur);
-    box-sizing: border-box;
-    overflow: visible;
+   position: fixed;
+   left: calc(var(--sidebarWidth) + 50px + 1vw);
+   width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
+   height: 100px;
+   bottom: 20px;
+   border-radius: 20px;
+   background-color: var(--bg-glass-light) !important;
+   backdrop-filter: var(--blur);
+   box-sizing: border-box;
+   overflow: visible !important;
 }
 
 [data-test="footer-player"]::before {
@@ -537,17 +537,18 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 /* Progress bar - fixed positioning, adjusted for sidebar */
 [aria-label="Progress bar"] {
-    position: fixed;
-    top: -75px;
-    left: 1vw;
-    width: 98vw;
-    height: 100px;
+   position: absolute !important;
+   top: 0;
+   left: 0 !important;
+   width: 100% !important;
+   height: 100px;
+   transform: none !important;
+   margin: 0 !important;
 }
 
-[class*="_range_"] {
-    background: transparent;
-    border-radius: 20px;
-    overflow: visible;
+[class*="range"] {
+   background: transparent;
+   border-radius: 20px;
 }
 
 [data-test="progress-indicator"] {
@@ -555,9 +556,9 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 }
 
 [data-test="interaction-layer"] {
-    height: 25px;
-    transform: translateY(-115px);
-    pointer-events: auto;
+   height: 25px;
+   transform: translateY(-115px);
+   pointer-events: auto;
 }
 
 #progressBar > div > [class*="toolTip"] {
