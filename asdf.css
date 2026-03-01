@@ -539,8 +539,8 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 [aria-label="Progress bar"] {
     position: fixed;
     top: -75px;
-    left: calc(var(--sidebarWidth) + 50px + 1vw);
-    width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
+    left: 1vw;
+    width: 98vw;
     height: 100px;
 }
 
