@@ -535,16 +535,14 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     position: relative;
 }
 
-/* Progress bar - properly positioned */
+
 [aria-label="Progress bar"] {
-    position: absolute;
-    top: auto;
-    bottom: 100px;
-    left: 0;
-    width: 100%;
+    position: fixed;
+    top: -75px;
+    width: 98vw;
     height: 100px;
-    transform: none;
 }
+
 
 [class*="_range_"] {
     background: transparent;
