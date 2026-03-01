@@ -537,10 +537,11 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
 
 /* Progress bar - fixed positioning, adjusted for sidebar */
 [aria-label="Progress bar"] {
-    position: fixed;
-    top: -75px;
-    left: calc(var(--sidebarWidth) + 50px + 1vw);
-    width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
+    position: absolute !important; 
+    top: -75px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 98vw;
     height: 100px;
 }
 
