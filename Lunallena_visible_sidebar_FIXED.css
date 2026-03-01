@@ -502,7 +502,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
    ========================================================= */
 
 [data-test="footer-player"] {
-    position: fixed;
+    position: absolute;
     left: calc(var(--sidebarWidth) + 50px + 1vw);
     width: calc(100vw - var(--sidebarWidth) - 50px - 2vw);
     height: 100px;
@@ -512,6 +512,7 @@ div[data-test="query-suggestions"] div[class*="_icon_"] {
     backdrop-filter: var(--blur);
     box-sizing: border-box;
     overflow: hidden;
+    z-index: 0;
 }
 
 [data-test="footer-player"]::before {
